@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 @EnableEurekaClient
 @RestController
-public class ApplicationClient {
+public class EurekaApplicationClient {
 
   @RequestMapping("/")
   public String home() {
@@ -19,7 +19,7 @@ public class ApplicationClient {
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(ApplicationClient.class, args);
+    SpringApplication.run(EurekaApplicationClient.class, args);
   }
 
 }

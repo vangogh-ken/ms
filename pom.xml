@@ -16,6 +16,8 @@
 		<module>ms-eurekaserver</module>
 		<module>ms-eurekaclient</module>
 		<module>ms-ribbon</module>
+		<module>ms-feign</module>
+		<module>ms-hystrix</module>
 	</modules>
 
 </project>
