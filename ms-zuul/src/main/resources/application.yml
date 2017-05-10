@@ -6,12 +6,12 @@ server:
   port: 8769
 spring:
   application:
-    name: service-zuul
+    name: ms-zuul
 zuul:
   routes:
     api-a:
       path: /api-a/**
-      serviceId: service-ribbon
+      serviceId: ms-feign
     api-b:
       path: /api-b/**
-      serviceId: service-feign
+      serviceId: ms-ribbon

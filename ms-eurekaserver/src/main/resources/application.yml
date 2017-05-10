@@ -9,3 +9,5 @@ eureka:
     fetchRegistry: false
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server: 
+    enableSelfPreservation: false #应用无法被检测到时，就不再保留。

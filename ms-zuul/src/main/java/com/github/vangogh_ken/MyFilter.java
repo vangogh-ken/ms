@@ -12,7 +12,7 @@ import com.netflix.zuul.context.RequestContext;
 @Component
 public class MyFilter extends ZuulFilter{
 
-    private static Logger log = LoggerFactory.getLogger(MyFilter.class);
+    private static Logger LOG = LoggerFactory.getLogger(MyFilter.class);
     @Override
     public String filterType() {
         return "pre";
@@ -28,14 +28,23 @@ public class MyFilter extends ZuulFilter{
         return true;
     }
 
+    /* 
+     * 返回任意对象或者null表示通过过滤
+     * (non-Javadoc)
+     * @see com.netflix.zuul.IZuulFilter#run()
+     */
     @Override
     public Object run() {
+    	boolean flag = false;
+    	if(!flag){
+    		return null;
+    	}
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-        log.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
+        LOG.info(String.format("%s >>> %s", request.getMethod(), request.getRequestURL().toString()));
         Object accessToken = request.getParameter("token");
         if(accessToken == null) {
-            log.warn("token is empty");
+        	LOG.warn("token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
             try {
@@ -44,7 +53,7 @@ public class MyFilter extends ZuulFilter{
 
             return null;
         }
-        log.info("ok");
+        LOG.info("ok");
         return null;
     }
 }

@@ -19,6 +19,8 @@
 		<module>ms-feign</module>
 		<module>ms-hystrix</module>
 		<module>ms-zuul</module>
+		<module>ms-config</module>
+		<module>ms-config-client</module>
 	</modules>
 
 </project>
