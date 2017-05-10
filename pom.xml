@@ -21,6 +21,7 @@
 		<module>ms-zuul</module>
 		<module>ms-config</module>
 		<module>ms-config-client</module>
+		<module>ms-bus</module>
 	</modules>
 
 </project>

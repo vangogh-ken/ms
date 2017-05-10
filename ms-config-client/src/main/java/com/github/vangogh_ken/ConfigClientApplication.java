@@ -18,7 +18,7 @@ public class ConfigClientApplication {
     String foo;
     
     @RequestMapping(value = "/config")
-    public String hi(){
+    public String echo(){
         return foo;
     }
 }
