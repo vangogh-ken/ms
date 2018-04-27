@@ -23,6 +23,7 @@
 		<module>ms-config-client</module>
 		<module>ms-bus</module>
 		<module>ms-redlock</module>
+		<module>ms-dhcp</module>
 	</modules>
 
 </project>
